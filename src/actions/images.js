@@ -1,16 +1,18 @@
 import unsplash from "../api/unsplash";
-import {CLEAR_IMAGES, FETCH_IMAGES} from "./types";
+import {CLEAR_IMAGES, FETCH_IMAGES, SET_SEARCH_QUERIES} from "./types";
 
 
-export const fetchImages = (params) => async dispatch => {
-    console.log("action");
-    console.log(params);
-    dispatch(clearImages());
+export const fetchImages = (param) => async (dispatch, getState) => {
+    if (getState().images.searchQuery === param) {
+        return;
+    }
+    dispatch(setSearchQuery(param));
     const response = await unsplash.get('/search/photos', {
-        params
+        params: {
+            query: param
+        }
     });
-    console.log(response);
-
+    dispatch(clearImages());
     dispatch({type: FETCH_IMAGES, payload: response.data.results});
 };
 
@@ -18,5 +20,11 @@ export const fetchImages = (params) => async dispatch => {
 export const clearImages = () => {
     return {
         type: CLEAR_IMAGES
+    }
+};
+export const setSearchQuery = (query) => {
+    return {
+        type: SET_SEARCH_QUERIES,
+        payload: query
     }
 };

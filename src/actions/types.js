@@ -7,4 +7,5 @@ export const FETCH_IMAGE = 'FETCH_IMAGE';
 export const DELETE_IMAGE = 'DELETE_IMAGE';
 export const EDIT_IMAGE = 'EDIT_IMAGE';
 export const CLEAR_IMAGES = 'CLEAR_IMAGES';
+export const SET_SEARCH_QUERIES = 'SET_SEARCH_QUERIES';
 

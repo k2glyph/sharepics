@@ -18,7 +18,7 @@ const mapStateToProps = state => {
     console.log("App.js");
     console.log(state);
     return {
-        images: Object.values(state.images)
+        images: state.images.list
     }
 };
 
