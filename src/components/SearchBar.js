@@ -1,13 +1,17 @@
 import React from "react";
 import {connect} from "react-redux";
-import {fetchImages} from "../actions";
+import {searchImages, loadMore} from "../actions";
 
 class SearchBar extends React.Component {
     state = { query: "" };
 
     onFormSubmit = event => {
         event.preventDefault();
-        this.props.fetchImages(this.state.query);
+        this.props.searchImages(this.state.query);
+    };
+
+    loadMore = () => {
+        this.props.loadMore();
     };
 
     render() {
@@ -25,9 +29,10 @@ class SearchBar extends React.Component {
                         />
                     </div>
                 </form>
+                <button onClick={this.loadMore}>next</button>
             </div>
         );
     }
 }
 
-export default connect(null, {fetchImages})(SearchBar);
+export default connect(null, {searchImages, loadMore})(SearchBar);
