@@ -1,4 +1,3 @@
-
 import _ from 'lodash';
 import {
     ADD_PAGE,
@@ -25,33 +24,44 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
 
     switch (action.type) {
-        case FETCH_IMAGES:
+        case FETCH_IMAGES: {
             // return {...state, ..._.mapKeys(action.payload, 'id')};
             const {list, total, totalPage} = action.payload;
-            return {...state,  list, total, totalPage};
-        case LOAD_MORE:
+            return {...state, list, total, totalPage};
+        }
+        case LOAD_MORE: {
             // return {...state, ..._.mapKeys(action.payload, 'id')};
             // return {...state, list : [...state.list, action.payload] };
-            return {...state, list : state.list.concat(action.payload) };
-        case FETCH_IMAGE:
+            return {...state, list: state.list.concat(action.payload)};
+        }
+        case FETCH_IMAGE: {
             return {...state, [action.payload.id]: action.payload};
-        case CREATE_IMAGE:
+        }
+        case CREATE_IMAGE: {
             return {...state, [action.payload.id]: action.payload};
-        case DELETE_IMAGE:
+        }
+        case DELETE_IMAGE: {
             return _.omit(state, action.payload);
-        case EDIT_IMAGE:
+        }
+        case EDIT_IMAGE: {
             return {...state, [action.payload.id]: action.payload};
-        case CLEAR_IMAGES:
+        }
+        case CLEAR_IMAGES: {
             // return _.remove(state.images);
             return {...state, list: [], currentPage: 1, totalPage: 0, total: 0};
-        case SET_SEARCH_QUERIES:
-            return {...state, searchQuery : action.payload};
-        case ADD_PAGE:
-            return {...state, currentPage : action.payload};
-        case START_LOADING:
-            return {...state, loading : true};
-        case RESET_LOADING:
-            return {...state, loading : false};
+        }
+        case SET_SEARCH_QUERIES: {
+            return {...state, searchQuery: action.payload};
+        }
+        case ADD_PAGE: {
+            return {...state, currentPage: action.payload};
+        }
+        case START_LOADING: {
+            return {...state, loading: true};
+        }
+        case RESET_LOADING: {
+            return {...state, loading: false};
+        }
         default:
             return state;
     }

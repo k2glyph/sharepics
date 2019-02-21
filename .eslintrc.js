@@ -18,6 +18,18 @@ module.exports = {
     rules: {
         "react/prop-types": 0,
         "indent": ["error", 4, {"SwitchCase": 1}],
+        "prefer-destructuring": ["error", {
+            "VariableDeclarator": {
+                "array": true,
+                "object": true
+            },
+            "AssignmentExpression": {
+                "array": true,
+                "object": true
+            }
+        }, {
+            "enforceForRenamedProperties": false
+        }]
     },
     extends: ["eslint:recommended", "plugin:react/recommended"],
     parser: "babel-eslint"

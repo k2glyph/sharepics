@@ -29,7 +29,7 @@ export const searchImages = (param) => async (dispatch, getState) => {
 };
 
 export const loadMore = () => async (dispatch, getState) => {
-    const images = getState().images;
+    const {images} = getState();
     if (images.loading || images.currentPage >= images.totalPage) {
         return;
     }

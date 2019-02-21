@@ -1,5 +1,5 @@
 //backend app version
-const version = 'v1';
+// const version = 'v1';
 const Configuration = {
     //backend api for user interface data
     // host: "http://localhost:3001/"+version+"/api/",
