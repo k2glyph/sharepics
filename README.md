@@ -4,4 +4,7 @@ Images for Everyone
 ### `npm test`
 
 ## Dev Environment
-https://sharepicss.herokuapp.com
+https://dev-sharepics.herokuapp.com
+
+## Prod Environment
+https://prod-sharepics.herokuapp.com
