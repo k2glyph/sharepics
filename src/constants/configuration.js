@@ -6,8 +6,8 @@ const Configuration = {
     host: "http://localhost:3001/",
 
     //google oAuth login credentials
-    googleClientId: '227023689893-7r0i7ddcjhl7dfb05dv9008j49erv6n5.apps.googleusercontent.com',
-    googleClientSecret: 'ikvLHFlFvh1y7ksWjSR2jfKt',
+    googleClientId: '91277064114-ragjnir54ahbqhf681dkvpij6r785ji1.apps.googleusercontent.com',
+    googleClientSecret: '4fjhDjEZj4CeCrhjBLseqyQb',
 
     //facebook oAuth login credentials
     facebookAppId: '265292217482740'
