@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {searchImages, loadMore} from "../actions";
+import {searchImages} from "../actions";
 import GoogleAuth from "../auth/GoogleAuth";
 
 class SearchBar extends React.Component {
@@ -30,11 +30,10 @@ class SearchBar extends React.Component {
                         />
                     </div>
                 </form>
-                <button onClick={this.loadMore}>next</button>
                 <GoogleAuth/>
             </div>
         );
     }
 }
 
-export default connect(null, {searchImages, loadMore})(SearchBar);
+export default connect(null, {searchImages})(SearchBar);
